@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <!-- bs -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div style="background-color: rgb(255, 255, 255); height: 100vh;">
+        <nav class="navbar">
+            <img src="https://cdn.logo.com/hotlink-ok/logo-social.png"  style="width: 150px;" srcset="">
+            <h3>HeLLo <span id="usrname">username</span> </h3>
+            <div class="ms-auto">
+
+                <button onclick="logout()" class="btn btn-outline-info">Logout</button>
+            </div>
+        </nav>
+        <main class="border " style="height: 80vh;">
+            <section class="container">
+                <div class="text-center mt-5" style=" font-size: 100px;">
+
+                    Welcome<span id="result" class="text-info ">  User</span>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+<script>
+    if(localStorage.getItem("username")){
+        result.innerHTML = localStorage.getItem("username")
+    }else{
+        alert("Please login !")
+        window.location = "index.html"
+    }
+    
+    const logout =()=> {
+        localStorage.removeItem("username")
+        window.location = "index.html"
+    }
+
+</script>
+</html>
